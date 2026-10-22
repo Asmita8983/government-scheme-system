@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6-jammy
+    container_name: gov-mongo
+    ports:
+      - "27017:27017" # Exposed for local debugging
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - msc-network
+
+  redis:
+    image: redis:alpine
+    container_name: gov-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - msc-network
+
+  api-gateway:
+    build: ./microservices/api-gateway
+    container_name: gov-api-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - AUTH_SERVICE_URL=http://auth-service:5001
+      - SCHEME_SERVICE_URL=http://scheme-service:5002
+    depends_on:
+      - auth-service
+      - scheme-service
+    networks:
+      - msc-network
+
+  auth-service:
+    build: ./microservices/auth-service
+    container_name: gov-auth-service
+    ports:
+      - "5001:5001"
+    environment:
+      - PORT=5001
+      - MONGO_URI=mongodb://mongodb:27017/gov_schemes
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - msc-network
+
+  scheme-service:
+    build: ./microservices/scheme-service
+    container_name: gov-scheme-service
+    ports:
+      - "5002:5002"
+    environment:
+      - PORT=5002
+      - MONGO_URI=mongodb://mongodb:27017/gov_schemes
+    depends_on:
+      - mongodb
+    networks:
+      - msc-network
+
+  frontend:
+    build: ./frontend
+    container_name: gov-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://api-gateway:5000
+    depends_on:
+      - api-gateway
+    networks:
+      - msc-network
+
+volumes:
+  mongo-data:
+
+networks:
+  msc-network:
+    driver: bridge

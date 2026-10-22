@@ -1,0 +1,89 @@
+
+> government-scheme-system-microservices@1.0.0 start:all
+> concurrently "npm run start:gateway" "npm run start:auth" "npm run start:scheme" "npm run start:interaction" "npm run start:analytics"
+
+[2] 
+[2] > government-scheme-system-microservices@1.0.0 start:scheme
+[2] > cd microservices/scheme-service && npm start
+[2] 
+[1] 
+[1] > government-scheme-system-microservices@1.0.0 start:auth
+[1] > cd microservices/auth-service && npm start
+[1] 
+[0] 
+[0] > government-scheme-system-microservices@1.0.0 start:gateway
+[0] > cd microservices/api-gateway && npm start
+[0] 
+[3] 
+[3] > government-scheme-system-microservices@1.0.0 start:interaction
+[3] > cd microservices/interaction-service && npm start
+[3] 
+[4] 
+[4] > government-scheme-system-microservices@1.0.0 start:analytics
+[4] > cd microservices/analytics-service && npm start
+[4] 
+[2] 
+[2] > scheme-service@1.0.0 start
+[2] > node server.js
+[2] 
+[3] 
+[3] > interaction-service@1.0.0 start
+[3] > node server.js
+[3] 
+[4] 
+[4] > analytics-service@1.0.0 start
+[4] > node server.js
+[4] 
+[0] 
+[0] > api-gateway@1.0.0 start
+[0] > node server.js
+[0] 
+[1] 
+[1] > auth-service@1.0.0 start
+[1] > node server.js
+[1] 
+[0] ≡ƒÜÇ API Gateway running on port 5000
+[4] (node:16600) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+[4] (Use `node --trace-warnings ...` to show where the warning was created)
+[4] (node:16600) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+[4] ≡ƒÜÇ Analytics Service running on port 5004
+[4] Γ£à Analytics Service: MongoDB Connected
+[1] Firebase Admin Initialization Failed:  Service account object must contain a string "project_id" property.
+[1] Attempted to load key from: D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\config\google-services.json
+[1] Please provide a valid serviceAccountKey.json in backend/config or set FIREBASE_SERVICE_ACCOUNT_KEY env variable.
+[2] (node:4060) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+[2] (Use `node --trace-warnings ...` to show where the warning was created)
+[2] (node:4060) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+[2] ≡ƒÜÇ Scheme Service running on port 5002
+[2] Γ£à Scheme Service: MongoDB Connected
+[1] ≡ƒÜÇ Auth Service running on port 5001
+[1] Γ£à Auth Service: MongoDB Connected
+[3] node:internal/modules/cjs/loader:1080
+[3]   throw err;
+[3]   ^
+[3] 
+[3] Error: Cannot find module 'streamifier'
+[3] Require stack:
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\controllers\docController.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\routes\docRoutes.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\server.js
+[3]     at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+[3]     at Module._load (node:internal/modules/cjs/loader:922:27)
+[3]     at Module.require (node:internal/modules/cjs/loader:1143:19)
+[3]     at require (node:internal/modules/cjs/helpers:119:18)
+[3]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\controllers\docController.js:7:21)
+[3]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[3]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[3]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[3]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[3]     at Module.require (node:internal/modules/cjs/loader:1143:19) {
+[3]   code: 'MODULE_NOT_FOUND',
+[3]   requireStack: [
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\controllers\\docController.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\routes\\docRoutes.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\server.js'
+[3]   ]
+[3] }
+[3] 
+[3] Node.js v18.18.0
+[3] npm run start:interaction exited with code 1

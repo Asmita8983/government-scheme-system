@@ -1,0 +1,203 @@
+
+> government-scheme-system-microservices@1.0.0 start:all
+> concurrently "npm run start:gateway" "npm run start:auth" "npm run start:scheme" "npm run start:interaction" "npm run start:analytics"
+
+[2] 
+[2] > government-scheme-system-microservices@1.0.0 start:scheme
+[2] > cd microservices/scheme-service && npm start
+[2] 
+[0] 
+[0] > government-scheme-system-microservices@1.0.0 start:gateway
+[0] > cd microservices/api-gateway && npm start
+[0] 
+[3] 
+[3] > government-scheme-system-microservices@1.0.0 start:interaction
+[3] > cd microservices/interaction-service && npm start
+[3] 
+[1] 
+[1] > government-scheme-system-microservices@1.0.0 start:auth
+[1] > cd microservices/auth-service && npm start
+[1] 
+[4] 
+[4] > government-scheme-system-microservices@1.0.0 start:analytics
+[4] > cd microservices/analytics-service && npm start
+[4] 
+[3] 
+[3] > interaction-service@1.0.0 start
+[3] > node server.js
+[3] 
+[1] 
+[1] > auth-service@1.0.0 start
+[1] > node server.js
+[1] 
+[4] 
+[4] > analytics-service@1.0.0 start
+[4] > node server.js
+[4] 
+[0] 
+[0] > api-gateway@1.0.0 start
+[0] > node server.js
+[0] 
+[2] 
+[2] > scheme-service@1.0.0 start
+[2] > node server.js
+[2] 
+[0] node:events:495
+[0]       throw er; // Unhandled 'error' event
+[0]       ^
+[0] 
+[0] Error: listen EADDRINUSE: address already in use :::5000
+[0]     at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+[0]     at listenInCluster (node:net:1865:12)
+[0]     at Server.listen (node:net:1953:7)
+[0]     at Function.listen (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\api-gateway\node_modules\express\lib\application.js:635:24)
+[0]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\api-gateway\server.js:101:5)
+[0]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[0]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[0]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[0]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[0]     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:86:12)
+[0] Emitted 'error' event on Server instance at:
+[0]     at emitErrorNT (node:net:1844:8)
+[0]     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+[0]   code: 'EADDRINUSE',
+[0]   errno: -4091,
+[0]   syscall: 'listen',
+[0]   address: '::',
+[0]   port: 5000
+[0] }
+[0] 
+[0] Node.js v18.18.0
+[3] node:internal/modules/cjs/loader:1080
+[3]   throw err;
+[3]   ^
+[3] 
+[3] Error: Cannot find module '../helpers/symbols'
+[3] Require stack:
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\lib\types\objectid.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\lib\index.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\index.js
+[3] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\server.js
+[3]     at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+[3]     at Module._load (node:internal/modules/cjs/loader:922:27)
+[3]     at Module.require (node:internal/modules/cjs/loader:1143:19)
+[3]     at require (node:internal/modules/cjs/helpers:119:18)
+[3]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\interaction-service\node_modules\mongoose\lib\types\objectid.js:14:24)
+[3]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[3]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[3]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[3]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[3]     at Module.require (node:internal/modules/cjs/loader:1143:19) {
+[3]   code: 'MODULE_NOT_FOUND',
+[3]   requireStack: [
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\node_modules\\mongoose\\lib\\types\\objectid.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\index.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\node_modules\\mongoose\\lib\\index.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\node_modules\\mongoose\\index.js',
+[3]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\interaction-service\\server.js'
+[3]   ]
+[3] }
+[3] 
+[3] Node.js v18.18.0
+[0] npm run start:gateway exited with code 1
+[3] npm run start:interaction exited with code 1
+[4] node:internal/modules/cjs/loader:1080
+[4]   throw err;
+[4]   ^
+[4] 
+[4] Error: Cannot find module 'bcryptjs'
+[4] Require stack:
+[4] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\analytics-service\models\User.js
+[4] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\analytics-service\controllers\analyticsController.js
+[4] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\analytics-service\routes\analyticsRoutes.js
+[4] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\analytics-service\server.js
+[4]     at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+[4]     at Module._load (node:internal/modules/cjs/loader:922:27)
+[4]     at Module.require (node:internal/modules/cjs/loader:1143:19)
+[4]     at require (node:internal/modules/cjs/helpers:119:18)
+[4]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\analytics-service\models\User.js:2:16)
+[4]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[4]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[4]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[4]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[4]     at Module.require (node:internal/modules/cjs/loader:1143:19) {
+[4]   code: 'MODULE_NOT_FOUND',
+[4]   requireStack: [
+[4]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\analytics-service\\models\\User.js',
+[4]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\analytics-service\\controllers\\analyticsController.js',
+[4]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\analytics-service\\routes\\analyticsRoutes.js',
+[4]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\analytics-service\\server.js'
+[4]   ]
+[4] }
+[4] 
+[4] Node.js v18.18.0
+[4] npm run start:analytics exited with code 1
+[2] node:internal/modules/cjs/loader:1080
+[2]   throw err;
+[2]   ^
+[2] 
+[2] Error: Cannot find module 'tesseract.js'
+[2] Require stack:
+[2] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\scheme-service\utils\pdfParser.js
+[2] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\scheme-service\controllers\schemeController.js
+[2] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\scheme-service\routes\schemeRoutes.js
+[2] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\scheme-service\server.js
+[2]     at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+[2]     at Module._load (node:internal/modules/cjs/loader:922:27)
+[2]     at Module.require (node:internal/modules/cjs/loader:1143:19)
+[2]     at require (node:internal/modules/cjs/helpers:119:18)
+[2]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\scheme-service\utils\pdfParser.js:2:19)
+[2]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[2]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[2]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[2]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[2]     at Module.require (node:internal/modules/cjs/loader:1143:19) {
+[2]   code: 'MODULE_NOT_FOUND',
+[2]   requireStack: [
+[2]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\scheme-service\\utils\\pdfParser.js',
+[2]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\scheme-service\\controllers\\schemeController.js',
+[2]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\scheme-service\\routes\\schemeRoutes.js',
+[2]     'D:\\All About Full stak developer\\All Project React js\\MSC\\Desktop\\government-scheme-system\\microservices\\scheme-service\\server.js'
+[2]   ]
+[2] }
+[2] 
+[2] Node.js v18.18.0
+[1] Firebase Admin Initialization Failed:  Cannot find module 'D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\config\serviceAccountKey.json'
+[1] Require stack:
+[1] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\config\firebaseAdmin.js
+[1] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\controllers\authController.js
+[1] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\routes\authRoutes.js
+[1] - D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\server.js
+[1] Attempted to load key from: D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\config\serviceAccountKey.json
+[1] Please provide a valid serviceAccountKey.json in backend/config or set FIREBASE_SERVICE_ACCOUNT_KEY env variable.
+[2] npm run start:scheme exited with code 1
+[1] node:events:495
+[1]       throw er; // Unhandled 'error' event
+[1]       ^
+[1] 
+[1] Error: listen EADDRINUSE: address already in use :::5001
+[1]     at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+[1]     at listenInCluster (node:net:1865:12)
+[1]     at Server.listen (node:net:1953:7)
+[1]     at Function.listen (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\node_modules\express\lib\application.js:635:24)
+[1]     at Object.<anonymous> (D:\All About Full stak developer\All Project React js\MSC\Desktop\government-scheme-system\microservices\auth-service\server.js:50:5)
+[1]     at Module._compile (node:internal/modules/cjs/loader:1256:14)
+[1]     at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+[1]     at Module.load (node:internal/modules/cjs/loader:1119:32)
+[1]     at Module._load (node:internal/modules/cjs/loader:960:12)
+[1]     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:86:12)
+[1] Emitted 'error' event on Server instance at:
+[1]     at emitErrorNT (node:net:1844:8)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+[1]   code: 'EADDRINUSE',
+[1]   errno: -4091,
+[1]   syscall: 'listen',
+[1]   address: '::',
+[1]   port: 5001
+[1] }
+[1] 
+[1] Node.js v18.18.0
+[1] npm run start:auth exited with code 1

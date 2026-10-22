@@ -1,0 +1,15 @@
+{
+  "name": "government-scheme-system-microservices",
+  "version": "1.0.0",
+  "scripts": {
+    "start:gateway": "cd microservices/api-gateway && npm start",
+    "start:auth": "cd microservices/auth-service && npm start",
+    "start:scheme": "cd microservices/scheme-service && npm start",
+    "start:interaction": "cd microservices/interaction-service && npm start",
+    "start:analytics": "cd microservices/analytics-service && npm start",
+    "start:all": "concurrently \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:scheme\" \"npm run start:interaction\" \"npm run start:analytics\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
